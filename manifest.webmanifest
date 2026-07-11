@@ -1,0 +1,15 @@
+{
+  "name": "THE ONE — 1 Hour a Day",
+  "short_name": "THE ONE",
+  "description": "Track your three daily one-hour habits, keep your streaks, and watch slow progress add up.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0b12",
+  "theme_color": "#0a0b12",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

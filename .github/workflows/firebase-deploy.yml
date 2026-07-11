@@ -1,0 +1,25 @@
+name: Deploy THE ONE to Firebase Hosting
+
+# CI/CD: every push to main auto-deploys the site to Firebase Hosting.
+# Set up once with:  firebase init hosting:github
+# (that command creates the FIREBASE_SERVICE_ACCOUNT_* secret for you)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to Firebase Hosting (live channel)
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          channelId: live
+          projectId: the-one-99635
